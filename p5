@@ -1,0 +1,58 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JW PLAYER </title>
+<style>
+body {background:#000;
+            margin: 0px;
+        }
+
+        .jwplayer {width:100%;height:100%;
+            position: absolute !important;
+        }
+
+        .jwplayer.jw-flag-aspect-mode {
+            min-height: 100%;
+            max-height:100% ;
+        }
+
+
+</style>
+    <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+</head>
+
+<body>
+<div id="jwplayerDiv"></div>
+
+
+<script>
+
+const queryParams = new URLSearchParams(window.location.search);
+        const mpdLink= queryParams.get('url');
+        const drmLicense= queryParams.get('drmLicense');
+   
+
+[U1,U2] = mpdLink.split('|');
+
+  [k1, k2] = drmLicense.split(':');
+
+
+
+                        const player=jwplayer("jwplayerDiv").setup({
+            file:U1,
+            position: 'bottom',
+            autostart: true,
+            stretching: "",
+            width: "100%",
+            type: "dash",
+                                    logo: {
+        file: 'https://blogger.googleusercontent.com/img/a/AVvXsEiQ92h-ekVYskxW9qCgLvpQVMpAs4tqUQXnH9nDi37JW5B95V7Cq2Rz_mlGO68vTZmA2H5Qp4p8B0I9EUlW-6W1aVOZgITWN3xyE65Hd6G5G_D6HJFxiuXJaK-wMfYD0PiiUR9EBodkzuPH0-ubAMJQK_3F3rpDMEIJKCxlEzNZucpRzsumlBFXWqinGOw=s885',
+        link:'https://t.me/tv4wap'
+    },
+            drm: {
+                clearkey: {
+                    keyId:k1 ,
+                    key:k2
+                }
+            }
+        });
+</script>
